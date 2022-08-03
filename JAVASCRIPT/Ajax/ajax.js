@@ -9,7 +9,7 @@
 const image = document.getElementById('see_dogs')
 const button = document.querySelector('#mostar')
 
-button.addEventListener('click', function() {
+/*button.addEventListener('click', function() {
     // API Teste
     let request = new XMLHttpRequest() // Instanciando um novo objeto XMLHttpRequest
     let url = "https://dog.ceo/api/breeds/image/random"
@@ -36,4 +36,23 @@ button.addEventListener('click', function() {
 
     request.send();
 
+    // Resumo: Com o objeto XMLHttRequest a requisção síncrona ou assíncrona é feita de forma simples,
+    //primeiramente instânciando um objeto XMLHttpRequest, segundo abrindo a conexão com o método .open() 
+    //onde será definido o método http que será utilizado, a url/endPoint da api requisitada e também se 
+    //a requisição será síncrona ou assíncrona e, por último, fazer o envio dessa requisição com a ultilização do método .send(). E claro, após a requisição ser enviada você deve decidir o que irá fazer com a resposta/retorno que irá receber e aí depende da necessidade do proejeto.
+
+})*/
+
+//AGORA IREMOS ESTUDAR O MÉTODO DE REQUISIÇÕES API FECTH
+
+button.addEventListener('click', () => {
+    let url = "https://dog.ceo/api/breeds/image/random"
+
+    fetch(url, {
+        method: 'GET'
+    }).then((response) => {
+        response.json().then((data) => {
+            image.src = data.message
+        })
+    })
 })
