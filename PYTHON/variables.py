@@ -61,3 +61,15 @@ if a < 2: # ":" inicializa o escopo
     b = 'variável a é menor que 2' #subordinação hierárquica da variável b
     print(b)
 """
+# Existe alguns possibilidades de determinar o escopo de uma variável por meio 
+# de palavras-chave do python, como por exemplo "global". Exemplo:
+
+"""
+def getName():
+    global name
+    name = 'Esdras Nascimento'
+
+getName()
+print(name)
+"""
+
